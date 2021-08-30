@@ -2,14 +2,15 @@
   <div>
     <div class="flex-container">
       <div class="flex-item-left">
+        <h6>Employee Profile</h6>
         <img
-          :src="require('../../backend/uploads/' + employee.fileName + '.jpg')"
+          :src="require('../../../backend/uploads/' + employee.fileName + '.jpg')"
           alt="card image"
         />
       </div>
       <div class="flex-item-right">
-        <br /><h5>Update Profile</h5>
         <form @submit.prevent="handleUpdateForm">
+          <p><br /></p>
           <div class="form-group">
             <input
               type="text"
@@ -36,7 +37,6 @@
             <em>{{ message }}</em>
           </div>
         </form>
-        <br />
       </div>
     </div>
   </div>
@@ -55,7 +55,7 @@ export default {
       employee: {},
     };
   },
-  // Button "See Profile" onClick GETs this employee.
+  // edit-button onClick, GETs this employee.
   created() {
     const endpoint = `/employee/${this.$route.params.id}`;
 
@@ -66,7 +66,7 @@ export default {
   //
   methods: {
     async handleUpdateForm() {
-      // Update-button onClick, POSTs this employee.
+      // update-button onClick, POSTs this employee.
       const endpoint = `/update-employee/${this.$route.params.id}`;
       try {
         await axios.post(api + endpoint, this.employee).then(() => {
@@ -106,8 +106,6 @@ em {
   display: flex;
   flex-direction: row;
   font-size: 12pt;
-  text-align: center;
-  background-color: rgba(0, 0, 0, 0.05);
 }
 
 .flex-item-left {
