@@ -1,2 +1,2 @@
-# Clarke-Project-Vue-Flask-App
+# Clarke-Project-Vue-Flask-MongoDB
 An eco-friendly coffee estate and farm specializing in high quality washed Robusta Coffee.
