@@ -1,2 +1,2 @@
-# Clarke-Project-Vue-Flask-MongoDB
-An eco-friendly coffee estate and farm specializing in high quality washed Robusta Coffee.
+# Ufarm-jQuery-Flask-MongoDB
+A program to promote and support urban farming practice while easing market access and improving on the family earnings and livelihoods.
