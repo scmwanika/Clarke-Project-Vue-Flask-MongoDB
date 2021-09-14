@@ -1,0 +1,178 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<style>
+  /* Our Capacity */
+  #stat-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media screen and (max-width:480px) {
+    #stat-container {
+      width: 80%;
+    }
+  }
+
+  .stat {
+    margin-top: 20px;
+    min-width: 100px;
+    text-align: center;
+  }
+
+  @media screen and (max-width:480px) {
+    .stat {
+      text-align: left;
+    }
+  }
+
+  .stat-num {
+    font-size: 45px;
+    margin-top: -10px;
+    color: rgb(100, 100, 100);
+    font-family: 'Times New Roman', Times, serif;
+  }
+
+  /* Our Partners */
+  @media screen and (max-width: 764px) {
+    #our-partners {
+      margin-top: 30px;
+    }
+  }
+
+  #partners-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    overflow-y: hidden;
+    overflow-x: auto;
+  }
+
+  #partners-container::-webkit-scrollbar {
+    width: 0px;
+  }
+
+  @media screen and (max-width: 630px) {
+    #partners-container {
+      margin-top: 40px;
+    }
+  }
+
+  @media screen and (max-width: 1280px) {
+    #our-partner {
+      min-width: 100%;
+    }
+  }
+
+  .partner {
+    min-width: 200px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+  }
+
+  img {
+    max-width: 100%;
+    min-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+</style>
+
+<!-- Our Capacity -->
+<div class="capacity-section">
+  <h5>
+    <p>Our Capacity</p>
+  </h5>
+  <p>These statistics show our current production and growth potential.</p>
+  <div>
+    <div id="stat-container">
+      <div class="stat">
+        <div class="stat-num">1500</div>
+        <div class="stat-text">Acres available</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">300+</div>
+        <div class="stat-text">Acres of coffee</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">700K</div>
+        <div class="stat-text">Kilograms annually</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">50</div>
+        <div class="stat-text">Employees</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">300</div>
+        <div class="stat-text">Seasonal workers</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br /><br /><br />
+<!-- Our Partners -->
+<div id="our-partners">
+  <h5>
+    <p>Our Partners</p>
+  </h5>
+  <div id="partners-container">
+    <div class="partner">
+      <img src="../static/img/ucda.jpg" alt="Uganda Coffee Development Authority" aria-hidden="true" />
+    </div>
+    <div class="partner">
+      <img src="../static/img/ugacof.jpg" alt="UGACOF" aria-hidden="true" />
+    </div>
+    <div class="partner">
+      <img src="../static/img/great.jpg" alt="Great lakes coffee" aria-hidden="true" />
+    </div>
+    <div class="partner">
+      <img src="../static/img/lifad.jpg" alt="LIFAD" aria-hidden="true" />
+    </div>
+    <div class="partner">
+      <img src="../static/img/nucafe.png" alt="NUCAFE" aria-hidden="true" />
+    </div>
+  </div>
+</div>
+
+<br /><br /><br />
+<!-- Guests Comment -->
+<div>
+  <h5>
+    <p>Guests Comment</p>
+  </h5>
+  <table id="table table-info">
+    <!-- Head -->
+    <tr>
+      <th>Name</th>
+      <th>Rating</th>
+      <th>Comment</th>
+      <th>Review Date</th>
+    </tr>
+    <!-- Body -->
+    <tr v-for="(review, index) in reviewList" :key="review._id">
+      v-bind:review = "review"
+      v-bind:index = "index"
+      v-bind:itr = "item"
+      v-bind:key = "item.review._id"
+      <td>{{ review.name }}</td>
+      <td>{{ review.rating }}</td>
+      <td>{{ review.comment }}</td>
+      <td>{{ review.reviewDate }}</td>
+    </tr>
+  </table>
+  <em>{{ message }}</em>
+</div>
+
+<script src="../static/js/vue.js"></script>
+<script src="../static/js/review.js"></script>
+
+{% endblock %}

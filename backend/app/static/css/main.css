@@ -1,0 +1,98 @@
+#app {
+  font-family: Roboto, Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+}
+
+h4 {
+  color: white;
+  margin-left: 50%;
+  text-align: center;
+  background-color: #068d68;
+}
+
+h1,
+h3,
+h5,
+p {
+  text-align: center;
+}
+
+.header {
+  width: 100%;
+  position: fixed;
+  top: 0px;
+}
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  font-size: 10pt;
+  text-align: left;
+  background-color: #068d68;
+}
+
+.footer-item-left,
+.footer-item-middle,
+.footer-item-right {
+  padding-left: 50px;
+  flex: 33.33%;
+  color: white;
+}
+ 
+/* LOGO Style */
+span {
+  font-size: 22pt;
+  color: #068d68;
+}
+
+em {
+  font-size: 12pt;
+  color: #068d68;
+}
+
+/* Headline Style */
+.headline {
+  color: #068d68;
+  font-size: 18pt;
+  font-weight: bold;
+}
+
+h5 {
+  margin-left: 2.5%;
+  text-align: justify;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  font-size: 20px;
+  text-align: center;
+}
+
+.flex-item-left {
+  flex: 39%;
+}
+
+.flex-item-middle {
+  flex: 45%;
+  color: grey;
+  background-color: #f5f5f5;
+}
+
+.flex-item-right {
+  flex: 16.1%;
+}
+
+/* Responsive layout - makes a one column-layout instead of three-column layout */
+@media (max-width: 800px) {
+  .flex-container,
+  .footer {
+    flex-direction: column;
+  }
+}
