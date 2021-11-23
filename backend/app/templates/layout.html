@@ -1,226 +1,76 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
-
-  <!-- APP ICON -->
-  <link href="../static/logo.png" rel="icon">
-
-  <!-- CSS -->
+  <title>clarke-farm</title>
+  <!--Fonts-->
+  <link href="../static/css/font.css" rel="stylesheet">
+  <!--Bootstrap CSS-->
   <link href="../static/css/bootstrap.min.css" rel="stylesheet">
   <link href="../static/css/main.css" type="text/css" rel="stylesheet">
-
-  <!-- JAVASCRIPT -->
-  <script src="../static/js/jquery.min.js"></script>
-  <script src="../static/js/popper.min.js"></script>
-  <script src="../static/js/bootstrap.min.js"></script>
-
-  <!-- PAGE TITLE -->
-  <title>Clarke Farm</title>
-
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <!-- LOGO -->
-    <a class="navbar-brand" href="#"><span style="font-family: Monotype Corsiva"> Clarke Farm </span></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <!-- ROUTES -->
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="/">About <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/activities">Activities</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/coffee">Coffee</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/testimonial">Testimonial</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/dashboard">DASHBOARD</a>
-        </li>
-      </ul>
-      <img src="../static/phone-24.png" alt="phone-icon" />
-      <em>+256 (0) 392 201 400</em>
-    </div>
-  </nav>
 </head>
-
-<div id="app">
-  <div class="flex-container">
-    <div class="flex-item-left">
-      <img src="../static/img/farm.jpg" alt="farm" width=100% />
-    </div>
-    <div class="flex-item-middle hero">
-      <br />
-      <!-- Headline -->
-      <p class="headline">
-        An eco-friendly coffee estate and farm<br />
-        specializing in high quality washed Robusta Coffee.
-      </p>
-      <br />
-      <h5>
-        Visit Clarke Farm and experience the amazing hilltop views, explore
-        the river and forest walks, try the activities such as bouldering and
-        mountain biking, walk or jog on the farm trails or have an exciting
-        guided tour of the farm by Jeep. Round off your stay by roasting some
-        Clarke Farm coffee and enjoying the fresh locally prepared dishes.
-      </h5>
-      <br /><br />
-      <div class="container">
-        <!-- Button to Open the Modal -->
-        <p>
-          <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#book-a-trip">
-            Book A Trip
-          </button>
-          <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#feedback">
-            Feedback
-          </button>
-          <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#buy-coffee">
-            Buy Coffee
-          </button>
-        </p>
-
-        <!-- Book A Trip Modal -->
-        <div class="modal" id="book-a-trip">
-          <div class="modal-dialog modal-xl">
-            <div class="modal-content">
-
-              <!-- Modal Header -->
-              <div class="modal-header">
-                <h5 class="modal-title">Book A Trip</h5>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-              </div>
-
-              <!-- Modal body -->
-              <div class="modal-body">
-                <div class="flex-container">
-                  <div class="flex-item-left">
-                    Accommodation
-                    <br />
-                  </div>
-                  <div class="flex-item-right">
-                    <div style="background-color: rgba(0, 0, 0, 0.05)">
-                      <h6>Booking Form</h6>
-                      <form @submit.prevent="addGuest">
-                        <div>
-                          <input type="text" class="form-control form-control-sm mt-3" placeholder="Name" name="name"
-                            required />
-                          <input type="email" class="form-control form-control-sm mt-3" placeholder="Email Address"
-                            name="email" required />
-                          <input type="text" class="form-control form-control-sm mt-3" placeholder="Phone Number"
-                            name="phone" required />
-                          <input type="text" class="form-control form-control-sm mt-3" placeholder="Number of Guests"
-                            name="guestNum" required />
-                          <br />
-                          <p>Accommodation and Visitation Date:</p>
-                          <input class="btn-radio" type="radio" value="Container House" name="accommodationType" />
-                          <label>Container House</label>
-                          <br />
-                          <input class="btn-radio" type="radio" value="Camping Tent" name="accommodationType" />
-                          <label>Camping Tent</label>
-                          <br />
-                          <input class="btn-radio" type="radio" value="Cottage" name="accommodationType" />
-                          <label>Cottage</label>
-                          <br />
-                          <input type="date" class="form-control form-control-sm mt-3" name="checkin" required />
-                          <br />
-                          <input type="submit" class="btn btn-success btn-block" @click="insertGuest(guest)" />
-                        </div>
-                      </form>
-                      <em>{{ message }}</em>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </div>
+<br><br><br>
+<!--Navbar-->
+<nav class="navbar navbar-expand-md bg-light navbar-dark">
+  <a class="navbar-brand">
+    <span style="font-family: Monotype Corsiva"> Clarke Farm </span>
+  </a>
+  <a class="nav-header" href="/">About Us</a>
+  <a class="nav-header" href="/farm-activities">Farm Activities</a>
+  <a class="nav-header" href="/tourism">Tourism</a>
+  <button class="navbar-toggler" style="background-color: #068d68" data-toggle="collapse"
+    data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <!--Links-->
+    <ul class="navbar-nav ml-auto">
+      <!--Dropdown-->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" style="color: #068d68" id="navbardrop" data-toggle="dropdown">
+          Your Menu Here:
+        </a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="/dashboard">Dashboard</a>
         </div>
+      </li>
+    </ul>
+  </div>
+</nav>
 
-        <!-- Feedback Modal -->
-        <div class="modal" id="feedback">
-          <div class="modal-dialog">
-            <div class="modal-content">
-
-              <!-- Modal Header -->
-              <div class="modal-header">
-                <h5 class="modal-title">Farm visit reviews</h5>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-              </div>
-
-              <!-- Modal body -->
-              <div class="modal-body">
-                <div>
-                  <form @submit.prevent="handleSubmitForm">
-                    <div class="form-group">
-                      <input type="text" class="form-control" placeholder="Name" name="name" required />
-                    </div>
-
-                    <div class="form-group">
-                      <select class="form-control" name="rating" required>
-                        <option value="">How do you rate your stay at the farm? Scroll to select:</option>
-                        <option value="☆☆☆☆☆">Excellent</option>
-                        <option value="☆☆☆☆">Very Good</option>
-                        <option value="☆☆☆">Good</option>
-                        <option value="☆☆">Fair</option>
-                        <option value="☆">Poor</option>
-                      </select>
-                    </div>
-
-                    <div class="form-group">
-                      <input type="text" class="form-control" placeholder="Comment" name="comment" required />
-                    </div>
-
-                    <div class="form-group">
-                      <input type="date" class="form-control" placeholder="Review Date" name="reviewDate" required />
-                    </div>
-                    <br />
-                    <div class="form-group">
-                      <button class="btn btn-success btn-block">Submit</button>
-                    </div>
-                  </form>
-                  <em>{{ message }}</em>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-
-        <!-- Buy Coffee Modal -->
-        <div class="modal" id="buy-coffee">
-          <div class="modal-dialog modal-xl">
-            <div class="modal-content">
-
-              <!-- Modal Header -->
-              <div class="modal-header">
-                <h5 class="modal-title">Coffee Market</h5>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-              </div>
-
-              <!-- Modal body -->
-              <div class="modal-body">
-                coffee show room
-              </div>
-
-            </div>
-          </div>
-        </div>
-
+<body>
+  <div id="app-body">
+    <!-- BANNER -->
+    <div class="content">
+      <div class="content-left">
+        <img src="../static/img/farm.jpg" alt="farm" width=100% />
       </div>
-    </div>
-
-    <div class="flex-item-right">
-      <img src="../static/img/packaged-coffee.png" alt="packaged-coffee" width=100% />
+      <div class="content-middle hero">
+        <br />
+        <h2>
+          An eco-friendly coffee estate specializing<br />
+          in high quality washed Robusta Coffee.
+        </h2>
+        <br />
+        <h5>
+          Visit Clarke Farm and experience the amazing hilltop views, explore
+          the river and forest walks, try the activities such as bouldering and
+          mountain biking, walk or jog on the farm trails or have an exciting
+          guided tour of the farm by Jeep. Round off your stay by roasting some
+          Clarke Farm coffee and enjoying the fresh locally prepared dishes.
+        </h5>
+        <div>
+          <br />
+          <!--Links-->
+          <div>
+            <a class="btn btn-info" href="">Book A Trip</a>
+            <a class="btn btn-info" href="">Buy Coffee</a>
+          </div>
+        </div>
+      </div>
+      <div class="content-right">
+        <img src="../static/img/packaged-coffee.png" alt="packaged coffee" width=100% />
+      </div>
     </div>
   </div>
 
@@ -230,33 +80,38 @@
     {% endblock %}
   </div>
 
+</body>
+<!-- Footer -->
+<div id="app-footer">
   <br />
-  <!-- FOOTER -->
   <div class="footer">
     <div class="footer-item-left">
-      <h6 class="title">CONTACT</h6>
+      <iframe src="/reviews"></iframe>
+    </div>
+    <div class="footer-item-middle">
+      <h6>LINKS</h6>
+      <a class="nav-footer" href="/">About Us</a><br />
+      <a class="nav-footer" href="/farm-activities">Farm Activities</a><br />
+      <a class="nav-footer" href="/tourism">Tourism</a><br /><br />
+    </div>
+    <div class="footer-item-right">
+      <h6>INQUIRES</h6>
       +256 (0)392 201 400<br />
       Plot 8244, Bukasa-Muyenga<br />
       Kampala, Uganda<br /><br />
-    </div>
-    <div class="footer-item-middle">
-      <h6 class="title">SITE MAP</h6>
-      <a href="about.html">About</a><br />
-      <a href="visit.html">Visit</a><br />
-      <a href="coffee.html">Coffee</a><br />
-      <a href="testimonial.html">Testimonial</a><br /><br />
-    </div>
-    <div class="footer-item-right">
-      <h6 class="title">LOCATION</h6>
+      <h6>ADDRESS</h6>
       Katambale, Kyarusozi<br />
       Kyenjojo District<br />
       Uganda
     </div>
   </div>
-  <p>
-    <hr />
-    © 2021 Clarke Group Limited <br /><br />
-  </p>
+  <hr />
+  <p class="copyright">© 2021 Clarke Group Limited</p>
 </div>
+<!--Javascript support files-->
+<!--jQuery and Bootstrap Bundle (includes Popper)-->
+<script src="../static/js/jquery.min.js"></script>
+<script src="../static/js/popper.min.js"></script>
+<script src="../static/js/bootstrap.min.js"></script>
 
 </html>

@@ -1,8 +1,12 @@
 {% extends "layout.html" %}
-{% block content %}
 
-<style>
-  /* Our Capacity */
+{% block content %}
+<style scoped>
+  h5 {
+    color: #068d68;
+  }
+
+  /* Capacity styles */
   #stat-container {
     display: flex;
     flex-wrap: wrap;
@@ -37,11 +41,15 @@
     font-family: 'Times New Roman', Times, serif;
   }
 
-  /* Our Partners */
+
   @media screen and (max-width: 764px) {
     #our-partners {
       margin-top: 30px;
     }
+  }
+
+  h5 {
+    color: #068d68;
   }
 
   #partners-container {
@@ -86,11 +94,66 @@
   }
 </style>
 
-<!-- Our Capacity -->
+<div>
+  <!--Coffee Process-->
+  <h3>Coffee Process</h3>
+</diV>
+<div class="flex-container">
+  <div class="flex-item-left"><img src="../static/img/mother-garden.jpg" alt="mother garden" width=100% />
+    <h4>1-Mother Garden</h4>
+    <p>
+      Our mother garden consists of a variety of coffee seedlings. We have
+      all 7 lines of coffee wilt disease resistant varieties and the
+      traditional clones A-F.
+    </p>
+  </div>
+  <div class="flex-item-middle"><img src="../static/img/cherry-picking.jpg" alt="cherry picking" width=100% />
+    <h4>2-Cherry Picking</h4>
+    <p>
+      Our mother garden consists of a variety of coffee seedlings. We have
+      all 7 lines of coffee wilt disease resistant varieties and the
+      traditional clones A-F.
+    </p>
+  </div>
+  <div class="flex-item-right"><img src="../static/img/wet-processing.jpg" alt="wet processing" width=100% />
+    <h4>3-Wet Processing</h4>
+    <p>
+      Our mother garden consists of a variety of coffee seedlings. We have
+      all 7 lines of coffee wilt disease resistant varieties and the
+      traditional clones A-F.
+    </p>
+  </div>
+</div>
+<br><br>
+<!--Process Benefits-->
+<h3>Process Benefits</h3>
+<div class="flex-container">
+  <div class="flex-item-left">
+    <h4>☆ Clean Taste</h4>
+    <p>
+      Our process guarantees a cleaner and more consistent flavor than other
+      methods.
+    </p>
+  </div>
+  <div class="flex-item-middle">
+    <h4>☆ Selective Picking</h4>
+    <p>
+      Only the ripest green cherries are picked for processing. This
+      guarantees a higher acidity and gives a better taste.
+    </p>
+  </div>
+  <div class="flex-item-right">
+    <h4>☆ Quality Control</h4>
+    <p>
+      It guarantees a great deal of quality control through selective
+      picking and allows for a much more consistent flavor.
+    </p>
+  </div>
+</div>
+<br><br>
+<!--Our Capacity-->
+<h3>Our Capacity</h3>
 <div class="capacity-section">
-  <h5>
-    <p>Our Capacity</p>
-  </h5>
   <p>These statistics show our current production and growth potential.</p>
   <div>
     <div id="stat-container">
@@ -117,13 +180,10 @@
     </div>
   </div>
 </div>
-
-<br /><br /><br />
-<!-- Our Partners -->
+<br><br><br>
+<!--Our Partners-->
+<h3>Our Partners</h3><br>
 <div id="our-partners">
-  <h5>
-    <p>Our Partners</p>
-  </h5>
   <div id="partners-container">
     <div class="partner">
       <img src="../static/img/ucda.jpg" alt="Uganda Coffee Development Authority" aria-hidden="true" />
@@ -142,37 +202,5 @@
     </div>
   </div>
 </div>
-
-<br /><br /><br />
-<!-- Guests Comment -->
-<div>
-  <h5>
-    <p>Guests Comment</p>
-  </h5>
-  <table id="table table-info">
-    <!-- Head -->
-    <tr>
-      <th>Name</th>
-      <th>Rating</th>
-      <th>Comment</th>
-      <th>Review Date</th>
-    </tr>
-    <!-- Body -->
-    <tr v-for="(review, index) in reviewList" :key="review._id">
-      v-bind:review = "review"
-      v-bind:index = "index"
-      v-bind:itr = "item"
-      v-bind:key = "item.review._id"
-      <td>{{ review.name }}</td>
-      <td>{{ review.rating }}</td>
-      <td>{{ review.comment }}</td>
-      <td>{{ review.reviewDate }}</td>
-    </tr>
-  </table>
-  <em>{{ message }}</em>
-</div>
-
-<script src="../static/js/vue.js"></script>
-<script src="../static/js/review.js"></script>
-
+<br>
 {% endblock %}

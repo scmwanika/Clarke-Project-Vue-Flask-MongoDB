@@ -4,19 +4,15 @@ app = Flask(__name__)
 
 @app.route('/')
 def about():
-    return render_template("about.html")
+    return render_template("aboutUs.html")
 
-@app.route('/activities')
-def visit():
-    return render_template("activities.html")
-
-@app.route('/coffee')
+@app.route('/farm-activities')
 def coffeeProcess():
-    return render_template("coffee.html")
+    return render_template("farmActivities.html")
 
-@app.route('/testimonial')
+@app.route('/tourism')
 def testimonial():
-    return render_template("testimonial.html")
+    return render_template("tourism.html")
 
 @app.route('/dashboard')
 def index():
