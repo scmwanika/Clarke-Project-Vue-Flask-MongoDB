@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<!-- REVIEW -->
+<form class="review" action="{{ request.path }}" method="POST">
+    <fieldset>
+        <legend>Review Your Trip</legend><label>Name:</label><br /><input id="name" type="text"
+            name="name" /><br /><label>Rating:</label><br /><input id="rating" type="text"
+            name="rating" /><br /><label>Comment:</label><br /><input id="comment" type="text"
+            name="comment" /><br /><label>Review Date:</label><br /><input id="reviewDate" type="date"
+            name="reviewDate" />
+        <p></p><button class="btn btn-success submit" type="submit">Submit</button>
+        <p><span id="message"></span></p>
+    </fieldset>
+</form>
+{% endblock %}
